@@ -1,5 +1,10 @@
-import os
+import os,time
 import pika
+
+def service_check(pip):
+    print("received "+str(pip))
+
+
 
 if True:
     RABBITMQ_SERVER=os.getenv("RABBITMQ_SERVER")
@@ -16,7 +21,7 @@ if True:
         print("no config, using localhost and guest/guest")
         RABBITMQ_SERVER='localhost'
         RABBITMQ_USER='guest'
-        RABBITMQ_PASSWORD='guest*'
+        RABBITMQ_PASSWORD='guest'
     else:
         print ("aceepted rabbit, mode RABBITMQ")
 
